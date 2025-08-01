@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐕 Pawsome Calculator 🐕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="header">
+                <h1>🐕 Pawsome Calculator 🐾</h1>
+                <p class="tagline">Calculate like a good boy! 🦴</p>
+            </div>
+            
+            <div class="display-container">
+                <div class="display" id="display">0</div>
+                <div class="dog-face">🐕</div>
+            </div>
+            
+            <div class="buttons">
+                <!-- Clear and operations row -->
+                <button class="btn clear" onclick="clearDisplay()">Clear</button>
+                <button class="btn delete" onclick="deleteLast()">⌫</button>
+                <button class="btn operation" onclick="appendToDisplay('/')" data-operation="divide">÷</button>
+                <button class="btn operation" onclick="appendToDisplay('*')" data-operation="multiply">×</button>
+                
+                <!-- Number and operation rows -->
+                <button class="btn number" onclick="appendToDisplay('7')">7</button>
+                <button class="btn number" onclick="appendToDisplay('8')">8</button>
+                <button class="btn number" onclick="appendToDisplay('9')">9</button>
+                <button class="btn operation" onclick="appendToDisplay('-')" data-operation="subtract">-</button>
+                
+                <button class="btn number" onclick="appendToDisplay('4')">4</button>
+                <button class="btn number" onclick="appendToDisplay('5')">5</button>
+                <button class="btn number" onclick="appendToDisplay('6')">6</button>
+                <button class="btn operation" onclick="appendToDisplay('+')" data-operation="add">+</button>
+                
+                <button class="btn number" onclick="appendToDisplay('1')">1</button>
+                <button class="btn number" onclick="appendToDisplay('2')">2</button>
+                <button class="btn number" onclick="appendToDisplay('3')">3</button>
+                <button class="btn equals" onclick="calculate()" rowspan="2">=</button>
+                
+                <button class="btn number zero" onclick="appendToDisplay('0')">0</button>
+                <button class="btn number" onclick="appendToDisplay('.')">.</button>
+                <button class="btn paw" onclick="showPawMessage()">🐾</button>
+            </div>
+            
+            <div class="dog-messages" id="dogMessages">
+                <p>Woof! Ready to fetch some calculations! 🎾</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Made with 🦴 and lots of tail wags!</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+/* Dog-themed Calculator Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #F0E68C 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.calculator {
+    background: #FFF8DC;
+    border: 4px solid #8B4513;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.calculator::before {
+    content: '🦴🦴🦴🦴🦴';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.header h1 {
+    color: #8B4513;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    color: #CD853F;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.display-container {
+    background: #F5DEB3;
+    border: 3px solid #D2691E;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.display {
+    font-size: 2em;
+    color: #8B4513;
+    background: #FFFACD;
+    border: 2px solid #DEB887;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: right;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.dog-face {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5em;
+    animation: wag 2s infinite;
+}
+
+@keyframes wag {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn.number {
+    background: linear-gradient(135deg, #FFE4B5, #FFDAB9);
+    color: #8B4513;
+    border: 2px solid #DEB887;
+}
+
+.btn.number:hover {
+    background: linear-gradient(135deg, #FFDAB9, #F4A460);
+}
+
+.btn.operation {
+    background: linear-gradient(135deg, #DEB887, #CD853F);
+    color: #8B4513;
+    border: 2px solid #8B4513;
+}
+
+.btn.operation:hover {
+    background: linear-gradient(135deg, #CD853F, #A0522D);
+    color: #FFF8DC;
+}
+
+.btn.equals {
+    background: linear-gradient(135deg, #32CD32, #228B22);
+    color: white;
+    border: 2px solid #006400;
+    grid-row: span 2;
+    height: 130px;
+}
+
+.btn.equals:hover {
+    background: linear-gradient(135deg, #228B22, #006400);
+}
+
+.btn.clear {
+    background: linear-gradient(135deg, #FF6347, #FF4500);
+    color: white;
+    border: 2px solid #DC143C;
+}
+
+.btn.clear:hover {
+    background: linear-gradient(135deg, #FF4500, #DC143C);
+}
+
+.btn.delete {
+    background: linear-gradient(135deg, #FFA500, #FF8C00);
+    color: white;
+    border: 2px solid #FF6347;
+}
+
+.btn.delete:hover {
+    background: linear-gradient(135deg, #FF8C00, #FF6347);
+}
+
+.btn.zero {
+    grid-column: span 2;
+}
+
+.btn.paw {
+    background: linear-gradient(135deg, #DA70D6, #DDA0DD);
+    color: white;
+    border: 2px solid #BA55D3;
+    font-size: 1.5em;
+}
+
+.btn.paw:hover {
+    background: linear-gradient(135deg, #DDA0DD, #BA55D3);
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.dog-messages {
+    background: #F0F8FF;
+    border: 2px solid #87CEEB;
+    border-radius: 10px;
+    padding: 10px;
+    color: #4682B4;
+    font-style: italic;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    margin-top: 20px;
+    color: #8B4513;
+    font-size: 0.9em;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .calculator {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.5em;
+    }
+    
+    .display {
+        font-size: 1.6em;
+    }
+    
+    .btn {
+        height: 50px;
+        font-size: 1em;
+    }
+    
+    .btn.equals {
+        height: 110px;
+    }
+}
+
+/* Animation for successful calculation */
+.calculator.success {
+    animation: celebrate 0.6s ease;
+}
+
+@keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Error state */
+.display.error {
+    background: #FFE4E1;
+    color: #DC143C;
+    border-color: #FF6347;
+}
